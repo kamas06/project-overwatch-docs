@@ -14,6 +14,8 @@ The Communications area supports three operator workflows:
 - launching a bulk email from the current members-list filters
 - managing reusable templates and reviewing campaign history in the Communications workspace
 
+> **Limitation:** Attachments are not currently supported. All communication is text-based (subject and body only).
+
 > **Note:** Bulk campaigns are created when you launch them. The UI does not provide activate, deactivate, or delete actions for campaigns. Those actions apply to email templates.
 
 **How emails are delivered:**
