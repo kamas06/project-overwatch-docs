@@ -92,7 +92,7 @@ The Communications area supports three operator workflows:
 - The campaign targets all members matching the filters, not only the rows visible on the current page.
 - Individual recipient addresses are intentionally hidden in the bulk composer.
 
-> **Brevo sending limits:** Bulk campaigns are delivered via Brevo. The club account is currently on the free tier, which has a monthly sending limit. Check the remaining allowance before launching a large campaign. Sent campaigns do not appear in Gmail.
+> **Brevo sending limits:** Bulk campaigns are delivered via Brevo. The club account is currently on the free tier with a limit of **300 emails per month**. Check the remaining allowance before launching a large campaign. Sent campaigns do not appear in Gmail.
 
 ---
 
