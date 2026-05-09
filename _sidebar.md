@@ -1,3 +1,3 @@
 - [Project Overwatch — User Guide](/)
-- [User Guide - Emails, Templates, and Campaigns](/emails.md)
-- [User Guide — Member Lifecycle & Workflows](/member-workflow.md)
+- [User Guide - Emails, Templates, and Campaigns](emails)
+- [User Guide — Member Lifecycle & Workflows](member-workflow)
