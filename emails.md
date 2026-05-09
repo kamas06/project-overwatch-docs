@@ -16,6 +16,14 @@ The Communications area supports three operator workflows:
 
 > **Note:** Bulk campaigns are created when you launch them. The UI does not provide activate, deactivate, or delete actions for campaigns. Those actions apply to email templates.
 
+**How emails are delivered:**
+
+| Type | Sent via | What to expect |
+|---|---|---|
+| Custom email (one-to-one) | Gmail, as the logged-in operator | Appears in your Gmail Sent box |
+| Template workflow email | Gmail, as the logged-in operator | Appears in your Gmail Sent box |
+| Bulk campaign | Brevo (email marketing service) | Does not appear in Gmail; tracked in the Campaign dashboard |
+
 ---
 
 ## 1. Send a Custom Email to One Member
@@ -32,6 +40,7 @@ The Communications area supports three operator workflows:
 **What happens next:**
 - The composer stays locked to that member.
 - The result card shows the send status plus the rendered subject and body that were actually dispatched.
+- The email is sent via your Gmail account — it will appear in your Gmail Sent box.
 
 ---
 
@@ -61,6 +70,8 @@ The Communications area supports three operator workflows:
 
 > If the composer was opened from a template-specific shortcut or link, the template may already be selected when the page opens.
 
+> The email is sent via your Gmail account — it will appear in your Gmail Sent box.
+
 ---
 
 ## 3. Launch a Bulk Email Campaign
@@ -80,6 +91,8 @@ The Communications area supports three operator workflows:
 - Pagination is removed before the send request is created.
 - The campaign targets all members matching the filters, not only the rows visible on the current page.
 - Individual recipient addresses are intentionally hidden in the bulk composer.
+
+> **Brevo sending limits:** Bulk campaigns are delivered via Brevo. The club account is currently on the free tier, which has a monthly sending limit. Check the remaining allowance before launching a large campaign. Sent campaigns do not appear in Gmail.
 
 ---
 
