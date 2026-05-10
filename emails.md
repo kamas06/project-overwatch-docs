@@ -112,6 +112,36 @@ The Communications area supports three operator workflows:
 - The dashboard is for tracking and review.
 - New bulk campaigns are launched from **Members**, not created directly in the dashboard.
 
+### Understanding Recipient Statuses
+
+Each recipient in a campaign has an individual delivery status. Statuses are set initially when the campaign is launched, then updated automatically as Brevo reports back what happened to each email.
+
+| Status | Meaning |
+|---|---|
+| `PENDING` | Recipient row created; Brevo has not yet acknowledged the message |
+| `SENT` | Brevo has accepted the message and passed it to the receiving mail server |
+| `DEFERRED` | Delivery temporarily delayed; Brevo will keep retrying |
+| `DELIVERED` | The receiving mail server confirmed successful delivery |
+| `OPENED` | The recipient opened the email (requires tracking pixel to load) |
+| `CLICKED` | The recipient clicked a link inside the email |
+| `BOUNCED` | Delivery failed — either a temporary soft bounce or a permanent hard bounce |
+| `BLOCKED` | Brevo blocked the send (e.g. recipient is on a suppression list) |
+| `INVALID` | The email address was rejected as invalid at send time |
+| `SPAM` | The recipient marked the email as spam |
+| `UNSUBSCRIBED` | The recipient used the Brevo unsubscribe link |
+| `FAILED` | An unexpected error was reported by the provider |
+| `DRY_RUN` | The campaign ran in dry-run mode; no email was actually sent |
+
+**How statuses change:**
+
+1. When the campaign launches, every recipient starts at `PENDING`.
+2. Brevo sends the email and immediately fires a `sent` event — the status advances to `SENT`.
+3. From `SENT`, the status advances further as Brevo delivers subsequent events: `DELIVERED`, `OPENED`, `CLICKED`, and so on.
+4. Terminal statuses — `BOUNCED`, `BLOCKED`, `INVALID`, `SPAM`, `UNSUBSCRIBED`, `FAILED` — are not overwritten by later events.
+5. If `email-enabled` is off, statuses stay at `DRY_RUN` and no emails leave the system.
+
+> Statuses are updated by Brevo webhooks. There can be a short delay between an event occurring and it appearing in the dashboard.
+
 ---
 
 ## 5. Manage Reusable Email Templates
